@@ -5,6 +5,7 @@ import { elsewhere } from '../data/elsewhere';
 
 const title = 'Chris Compiles — Building, shipping & creating';
 const description = 'A home for things I’m building, shipping and creating. Software, experiments, writing and other things I decided to make.';
+const isExternal = (url?: string) => Boolean(url && /^https?:\/\//.test(url));
 ---
 
 <SiteLayout title={title} description={description} canonicalPath="/">
@@ -26,9 +27,15 @@ const description = 'A home for things I’m building, shipping and creating. So
           <ol class="project-list">
             {projects.map((project, index) => {
               const Tag = project.url ? 'a' : 'div';
+              const external = isExternal(project.url);
               return (
                 <li>
-                  <Tag class:list={['project-row', { 'project-linked': project.url }]} href={project.url}>
+                  <Tag
+                    class:list={['project-row', { 'project-linked': project.url }]}
+                    href={project.url}
+                    target={external ? '_blank' : undefined}
+                    rel={external ? 'noopener noreferrer' : undefined}
+                  >
                     <span class="project-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
                     <div class="project-copy">
                       <h3>{project.name}{project.url && <span class="project-arrow" aria-hidden="true">↗</span>}</h3>
@@ -54,12 +61,19 @@ const description = 'A home for things I’m building, shipping and creating. So
           <section class="elsewhere" aria-labelledby="elsewhere-title">
             <h2 id="elsewhere-title">Elsewhere</h2>
             <ul>
-              {elsewhere.map((profile) => (
-                <li>
-                  <a href={profile.url} rel="me">{profile.name}<span aria-hidden="true">↗</span></a>
-                  <p>{profile.label}</p>
-                </li>
-              ))}
+              {elsewhere.map((profile) => {
+                const external = isExternal(profile.url);
+                return (
+                  <li>
+                    <a
+                      href={profile.url}
+                      target={external ? '_blank' : undefined}
+                      rel={external ? 'me noopener noreferrer' : 'me'}
+                    >{profile.name}<span aria-hidden="true">↗</span></a>
+                    <p>{profile.label}</p>
+                  </li>
+                );
+              })}
             </ul>
           </section>
         </div>
