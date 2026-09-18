@@ -1,2 +1,0 @@
-- Add verified project URLs for AthleteAsk, Didn’t Ship and Well Built when available; confirm their status labels.
-- Add GitHub or X only once the intended profile URLs are confirmed.

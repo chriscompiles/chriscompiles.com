@@ -2,7 +2,7 @@ export type Project = {
   name: string;
   description: string;
   status: 'BUILDING' | 'EXPERIMENT' | 'WRITING' | 'LIVE';
-  // Add a verified https:// URL when a project is ready to link to.
+  // Add a verified public URL or an established internal route when ready.
   url?: string;
 };
 
@@ -22,6 +22,7 @@ export const projects: Project[] = [
     name: 'Didn’t Ship',
     description: 'A playful experiment. The name may turn out to be accurate.',
     status: 'EXPERIMENT',
+    url: 'https://didntship.lol/',
   },
   {
     name: 'Well Built',
@@ -32,5 +33,6 @@ export const projects: Project[] = [
     name: 'A novel, in progress',
     description: 'Fiction exploring consciousness, AI and human survival. One draft at a time.',
     status: 'WRITING',
+    url: '/writing/',
   },
 ];

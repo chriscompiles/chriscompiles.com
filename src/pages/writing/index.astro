@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const pieces = (await getCollection('writing', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publicationDate.valueOf() - a.data.publicationDate.valueOf(),
+);
+const dateFormatter = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+const title = 'Writing — Chris Compiles';
+const description = 'Essays, notes, fiction and build logs by Chris Healey.';
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/writing/">
+  <main id="main" class="writing-page" tabindex="-1">
+    <header class="writing-header">
+      <p class="eyebrow"><span class="small-rule" aria-hidden="true"></span> Writing</p>
+      <h1>Notes, essays and stories.</h1>
+      <p>Longer thoughts, smaller observations and fiction in progress.</p>
+    </header>
+
+    {pieces.length > 0 ? (
+      <ol class="writing-list">
+        {pieces.map((piece) => (
+          <li>
+            <a href={`/writing/${piece.id}/`}>
+              <div class="writing-item-meta">
+                <span>{piece.data.type}</span>
+                <time datetime={piece.data.publicationDate.toISOString()}>
+                  {dateFormatter.format(piece.data.publicationDate)}
+                </time>
+              </div>
+              <h2>{piece.data.title}<span aria-hidden="true">→</span></h2>
+              <p>{piece.data.description}</p>
+            </a>
+          </li>
+        ))}
+      </ol>
+    ) : (
+      <p class="writing-empty">Nothing published here yet. The first piece is still taking shape.</p>
+    )}
+  </main>
+</SiteLayout>
