@@ -33,6 +33,6 @@ export const projects: Project[] = [
     name: 'A novel, in progress',
     description: 'Fiction exploring consciousness, AI and human survival. One draft at a time.',
     status: 'WRITING',
-    url: '/writing/',
+    url: '/novel/',
   },
 ];

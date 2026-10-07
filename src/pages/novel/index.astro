@@ -1,0 +1,21 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { Content, frontmatter } from '../../content/novel.md';
+
+const { title, description } = frontmatter;
+---
+
+<SiteLayout title={`${title} — Chris Compiles`} description={description} canonicalPath="/novel/">
+  <main id="main" class="writing-page" tabindex="-1">
+    <header class="writing-header">
+      <p class="eyebrow"><span class="small-rule" aria-hidden="true"></span> NOVEL</p>
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </header>
+
+    <div class="novel-body">
+      <span class="status status-writing"><span class="status-dot" aria-hidden="true"></span>WRITING</span>
+      <Content />
+    </div>
+  </main>
+</SiteLayout>

@@ -34,6 +34,7 @@ The build produces static HTML plus CSS, the font and public assets. No server, 
 - `src/data/projects.ts`: project names, short descriptions, status and optional URL. Add `url: 'https://…'` to make a whole row a link. Rows without a URL remain ordinary content.
 - `src/data/elsewhere.ts`: verified external profiles.
 - `src/pages/index.astro`: homepage introduction, projects and About copy.
+- `src/content/novel.md`: the novel page's heading, introduction (also used for metadata) and supporting copy at `/novel/`. This file is separate from the Writing collection.
 - `src/layouts/SiteLayout.astro`: shared navigation, footer and document metadata.
 - `src/styles/global.css`: layout, typography and theme colours. Dark mode follows the system preference with CSS; there is no toggle or stored preference.
 - `public/`: favicon, social image and robots.txt. The Astro sitemap integration generates `sitemap-index.xml` and `sitemap-0.xml` during the build.
