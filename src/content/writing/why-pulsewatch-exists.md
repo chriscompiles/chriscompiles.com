@@ -5,7 +5,11 @@ publicationDate: 2026-09-18
 type: Essay
 draft: false
 ---
-> **Update, 3 November 2026:** PulseWatch is on hold and the hosted service has been shut down. This essay describes how it worked when it was live.
+> **Update, 3 November 2026:** I’ve paused PulseWatch and shut down the hosted service.
+>
+> It was always a bit of a wild swing. The proposition was never extraordinary, and the market is crowded with established players. On top of that, the barrier to building your own tool for a specific monitoring need is now effectively zero. Sadly, after three months of trying, I saw zero traction.
+>
+> The essay below describes how PulseWatch worked when it was live.
 
 I built PulseWatch because of an automated trading-analysis pipeline I was running. Each morning, the pipeline pulled market data, sent it through Claude for analysis, applied my own risk rules and staged potential orders in Alpaca for me to review. When it worked it was great. When it failed overnight, it was a pain. I would open it and find no data pull, no market analysis, no queued orders. Nothing.
 
