@@ -1,7 +1,7 @@
 export type Project = {
   name: string;
   description: string;
-  status: 'BUILDING' | 'EXPERIMENT' | 'WRITING' | 'LIVE';
+  status: 'BUILDING' | 'EXPERIMENT' | 'WRITING' | 'LIVE' | 'ON HOLD';
   // Add a verified public URL or an established internal route when ready.
   url?: string;
 };
@@ -10,8 +10,7 @@ export const projects: Project[] = [
   {
     name: 'PulseWatch',
     description: 'External monitoring for scheduled jobs and automations.',
-    status: 'LIVE',
-    url: 'https://pulsewatch.ai/',
+    status: 'ON HOLD',
   },
   {
     name: 'AthleteAsk',

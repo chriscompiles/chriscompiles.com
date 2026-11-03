@@ -5,6 +5,8 @@ publicationDate: 2026-09-18
 type: Essay
 draft: false
 ---
+> **Update, 3 November 2026:** PulseWatch is on hold and the hosted service has been shut down. This essay describes how it worked when it was live.
+
 I built PulseWatch because of an automated trading-analysis pipeline I was running. Each morning, the pipeline pulled market data, sent it through Claude for analysis, applied my own risk rules and staged potential orders in Alpaca for me to review. When it worked it was great. When it failed overnight, it was a pain. I would open it and find no data pull, no market analysis, no queued orders. Nothing.
 
 I realized that application logs would only be useful if the process had started. They couldn’t tell me that my machine had gone to sleep, the scheduler had failed or the job had never launched. The thought that inspired PulseWatch was: **a script that never starts can't report its own absence**.
@@ -49,7 +51,7 @@ I built PulseWatch because I wanted this particular start-and-terminal-event mod
 
 I do not think PulseWatch answers that question yet. Today it can tell you that an agent did not start, failed or ran for too long. It cannot tell you whether the result was sensible, whether the agent became trapped in an unproductive loop or whether it quietly burned through an unreasonable number of tokens.
 
-PulseWatch is solo-built and very early. The stack is Flask, SQLAlchemy, Postgres and server-rendered Jinja. It is live at pulsewatch.ai, there is a free tier, and the current user count is fewer than 10.
+I built PulseWatch solo using Flask, SQLAlchemy, Postgres and server-rendered Jinja. At the time of writing, it had a free tier and fewer than 10 users.
 
 I’d particularly value criticism on three things:
 

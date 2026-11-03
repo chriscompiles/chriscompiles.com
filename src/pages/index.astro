@@ -41,7 +41,7 @@ const isExternal = (url?: string) => Boolean(url && /^https?:\/\//.test(url));
                       <h3>{project.name}{project.url && <span class="project-arrow" aria-hidden="true">{external ? '↗' : '→'}</span>}</h3>
                       <p>{project.description}</p>
                     </div>
-                    <span class:list={['status', `status-${project.status.toLowerCase()}`]}>
+                    <span class:list={['status', `status-${project.status.toLowerCase().replaceAll(' ', '-')}`]}>
                       <span class="status-dot" aria-hidden="true"></span>{project.status}
                     </span>
                   </Tag>
