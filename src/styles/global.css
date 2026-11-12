@@ -91,13 +91,12 @@ h2 { font-size: 1.0625rem; font-weight: 700; line-height: 1.5; letter-spacing: -
 .project-linked:hover h3 { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
 .project-linked:focus-visible { outline-offset: 4px; }
 .status { display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 7px 9px; border-radius: 4px; font: 0.625rem/1.2 var(--mono); letter-spacing: 0.045em; white-space: nowrap; }
-.status-on-hold { color: var(--muted); background: var(--hover); }
+.status-archived, .status-shelved { color: var(--muted); background: var(--hover); }
 .status-dot { width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
 .status-live { color: var(--live); background: var(--live-bg); }
 .status-building { color: var(--building); background: var(--building-bg); }
 .status-experiment { color: var(--experiment); background: var(--experiment-bg); }
 .status-writing { color: var(--writing); background: var(--writing-bg); }
-.project-footnote { margin-top: 19px; color: var(--muted); font-size: 0.75rem; line-height: 1.75; }
 
 .about-elsewhere { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 100px; padding-block: 77px 83px; }
 .about h2, .elsewhere h2 { margin-bottom: 20px; }
@@ -194,7 +193,6 @@ h2 { font-size: 1.0625rem; font-weight: 700; line-height: 1.5; letter-spacing: -
   .project-copy h3 { grid-column: 1; grid-row: 1; font-size: 1.0625rem; }
   .project-copy p { grid-column: 1 / -1; grid-row: 2; margin: 0; font-size: 0.8125rem; }
   .status { grid-column: 2; grid-row: 1; font-size: 0.5625rem; padding: 6px 7px; gap: 5px; }
-  .project-footnote { font-size: 0.6875rem; }
   .about-elsewhere { grid-template-columns: 1fr; gap: 36px; padding-block: 51px; }
   .about h2, .elsewhere h2 { margin-bottom: 15px; }
   .about p { font-size: 0.875rem; }

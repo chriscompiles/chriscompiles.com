@@ -61,8 +61,8 @@ draft: true
 
 The social image is a checked-in 1200 × 630 PNG. Its editable source is `design/social.html`; after installing dependencies, open that file in a browser and capture its 1200 × 630 viewport to update `public/social.png`. It is a design asset, not an additional site page.
 
-Project URLs are maintained in `src/data/projects.ts`; social URLs are maintained in `src/data/elsewhere.ts`. PulseWatch, Didn’t Ship, DEV Community, GitHub and X were verified on 18 September 2026. AthleteAsk remains unlinked because its candidate domain did not resolve when checked. Well Built remains unlinked because no public URL is established. `BUILDING` is a conservative placeholder for projects whose launch status is unknown.
+Over Coffee links to its public landing page. The archived PulseWatch entry links to its retrospective in Thoughts. AthleteAsk is shelved and has no project link. Well Built has no public URL.
 
 ## Verification
 
-`npm run build` is the production check. For layout changes, inspect mobile and desktop widths in both system themes, use keyboard navigation, and check colour contrast. The homepage should contain five projects, the site should contain no client scripts or horizontal scrolling, and the `#projects` and `#about` anchors should work.
+`npm run build` is the production check. For layout changes, inspect mobile and desktop widths in both system themes, use keyboard navigation, and check colour contrast. The homepage project count should match `src/data/projects.ts`, the site should contain no client scripts or horizontal scrolling, and the `#projects` and `#about` anchors should work.

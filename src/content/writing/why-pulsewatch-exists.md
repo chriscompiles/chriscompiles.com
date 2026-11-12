@@ -5,7 +5,7 @@ publicationDate: 2026-09-18
 type: Essay
 draft: false
 ---
-> **Update, 3 November 2026:** I’ve paused PulseWatch and shut down the hosted service.
+> **Update, 12 November 2026** — I’ve archived PulseWatch. I shut down the hosted monitoring service on 3 November 2026.
 >
 > It was always a bit of a wild swing. The proposition was never extraordinary, and the market is crowded with established players. On top of that, the barrier to building your own tool for a specific monitoring need is now effectively zero. Sadly, after three months of trying, I saw zero traction.
 >
